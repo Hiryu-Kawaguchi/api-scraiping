@@ -30,7 +30,7 @@ Azureはcronが使えるみたいなので移行を検討中
 # APIリファレンス
 
 HerokuのURL
-https://slack-soccer.herokuapp.com
+https://api-scraiping.herokuapp.com
 
 ## API一覧
 
