@@ -77,6 +77,8 @@ class TestApiController extends Controller
 //            echo $List[$i]['name'];
 //            echo '¥n';
 //        });
+        //スクレイピング更新
+        $this->index();
         echo 'hello';
     }
 
