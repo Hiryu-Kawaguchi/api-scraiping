@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/*
+ * 登録したHTMLをスクレイピングしてきてDBに保管するプログラム
+ *
+ * */
 //テスト用にPOSTでリクエスト出来るフォーム
 Route::get('input/post',function(){
     return view('url_input');
@@ -42,3 +46,17 @@ Route::group(['prefix' => 'api'], function () {
 });
 
 Route::get('news/reload','TestApiController@index');
+
+/*
+ * メルカリで欲しい商品を登録しておくと
+ * その商品が出品されたらSlackに通知が行くという素敵なAPI
+ *
+ * */
+
+//test
+Route::get('mercari/test','MercariItemController@scraping');
+
+//商品登録
+//商品一覧
+//商品削除
+//商品編集
