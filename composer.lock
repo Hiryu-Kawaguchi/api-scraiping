@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7978d0e351d507a1a95dda9074b77d2f",
+    "content-hash": "0183e9e24a0399d5fb83426e31a80c4c",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -974,6 +974,60 @@
                 "php"
             ],
             "time": "2017-11-04T11:48:34+00:00"
+        },
+        {
+            "name": "olssonm/l5-very-basic-auth",
+            "version": "3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/olssonm/l5-very-basic-auth.git",
+                "reference": "c7b68f757fffacd0954eb6b4af10214d1825065b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/olssonm/l5-very-basic-auth/zipball/c7b68f757fffacd0954eb6b4af10214d1825065b",
+                "reference": "c7b68f757fffacd0954eb6b4af10214d1825065b",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.4",
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.4",
+                "phpunit/phpunit": "5.7.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Olssonm\\VeryBasicAuth\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marcus Olsson",
+                    "email": "hello@marcusolsson.me",
+                    "homepage": "https://marcusolsson.me"
+                }
+            ],
+            "description": "Stateless HTTP basic auth without the need for a database. For Laravel 5",
+            "homepage": "https://github.com/olssonm/l5-very-basic-auth",
+            "keywords": [
+                "Authentication",
+                "http basic auth",
+                "laravel 5",
+                "olssonm"
+            ],
+            "time": "2017-01-27T16:50:38+00:00"
         },
         {
             "name": "paragonie/random_compat",

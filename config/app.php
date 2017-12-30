@@ -179,6 +179,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         //スクレイピングGoutte
         Weidner\Goutte\GoutteServiceProvider::class,
+        //Basic認証
+        Olssonm\VeryBasicAuth\VeryBasicAuthServiceProvider::class,
 
     ],
 

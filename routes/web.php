@@ -54,9 +54,10 @@ Route::get('news/reload','TestApiController@index');
  * */
 
 //test
-Route::get('mercari/test','MercariItemController@scraping');
-
-//商品登録
-//商品一覧
-//商品削除
-//商品編集
+Route::get('mercari/test','MercariItemController@run');
+// Basic認証をかける管理側
+Route::group(['middleware' => 'auth.very_basic', 'prefix' => ''], function() {
+    //keywordのREST
+    Route::resource('mercari/keyword', 'KeywordController');
+});
+//トリガー
