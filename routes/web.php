@@ -19,21 +19,20 @@ Route::get('/', function () {
  * 登録したHTMLをスクレイピングしてきてDBに保管するプログラム
  *
  * */
-//テスト用にPOSTでリクエスト出来るフォーム
-Route::get('input/post',function(){
-    return view('url_input');
-});
+Route::group(['middleware' => 'auth.very_basic', 'prefix' => ''], function() {
+    //テスト用にPOSTでリクエスト出来るフォーム
+    Route::get('input/post',function(){
+        return view('url_input');
+    });
 //テスト用にGETでリクエスト出来るフォーム
-Route::get('input/get',function(){
-    return view('token_input');
-});
+    Route::get('input/get',function(){
+        return view('token_input');
+    });
 //テスト用にGETでlistをリクエスト出来るフォーム
-Route::get('input/get/list',function(){
-    return view('date_input');
+    Route::get('input/get/list',function(){
+        return view('date_input');
+    });
 });
-
-//テスト開発
-Route::get('/test','TestApiController@test');
 
 //APIの本体
 Route::group(['prefix' => 'api'], function () {
@@ -49,15 +48,14 @@ Route::get('news/reload','TestApiController@index');
 
 /*
  * メルカリで欲しい商品を登録しておくと
- * その商品が出品されたらSlackに通知が行くという素敵なAPI
+ * その商品が出品されたらSlackに通知が行くというAPI
  *
  * */
 
-//test
-Route::get('mercari/test','MercariItemController@run');
 // Basic認証をかける管理側
 Route::group(['middleware' => 'auth.very_basic', 'prefix' => ''], function() {
     //keywordのREST
     Route::resource('mercari/keyword', 'KeywordController');
 });
-//トリガー
+//test
+Route::get('mercari/run','MercariItemController@run');

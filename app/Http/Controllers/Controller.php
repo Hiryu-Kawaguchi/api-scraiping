@@ -20,16 +20,21 @@ class Controller extends BaseController
          * 外部からのアクセスで攻撃を受けないように
          * IP制限をかけています
          * */
-        $ip = $this->getIpAddress();
-        $host_name = gethostbyaddr($ip);
-        if(!(in_array($ip,Config::get('ip')))){
-            /*
-             * slackからのアクセスはIPがコロコロ変わるためtokenで判断
-             * */
-            if($request['token'] != Config::get('ip.slack')){
-                Redirect::to('/')->send();
-            }
-        }
+        /*
+         *
+         * BASIC認証でなんとかする
+         *
+         * */
+//        $ip = $this->getIpAddress();
+//        $host_name = gethostbyaddr($ip);
+//        if(!(in_array($ip,Config::get('ip')))){
+//            /*
+//             * slackからのアクセスはIPがコロコロ変わるためtokenで判断
+//             * */
+//            if($request['token'] != Config::get('ip.slack')){
+//                Redirect::to('/')->send();
+//            }
+//        }
     }
 
     function getIpAddress() {

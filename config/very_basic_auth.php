@@ -21,7 +21,7 @@
         ],
 
         // Message to display if the user "opts out"/clicks "cancel"
-        'error_message'     => 'You have to supply your credentials to access this resource.',
+        'error_message'     => '正しいuserとpasswordを利用してください',
 
         // If you prefer to use a view with your error message you can uncomment "error_view".
         // This will superseed your default response message

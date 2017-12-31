@@ -63,11 +63,5 @@ class TestApiController extends Controller
         }
     }
 
-    public function test(){
-        /*
-         * ipが通るかどうかの確認に使って下さい
-         * */
-        echo 'hello';
-    }
 
 }

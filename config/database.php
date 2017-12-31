@@ -12,9 +12,6 @@ return [
     | you may use many connections at once using the Database library.
     |
     */
-    //heroku時
-    //'default' => env('DB_CONNECTION', 'pgsql'),
-    //開発時
     'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
