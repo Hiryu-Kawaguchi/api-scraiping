@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Goutte\Client;
 use App\SoccerNews;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\Storage;
 
 class TestApiController extends Controller
 {
@@ -64,21 +63,10 @@ class TestApiController extends Controller
         }
     }
 
-    public function test()
-    {
-//        $i = 0;
-//        $List = array();
-//        $client = new Client();
-//        $crawler = $client->request('GET', 'https://www.mercari.com/jp/search/?sort_order=&keyword=ipadair2&category_root=&brand_name=&brand_id=&size_group=&price_min=10000&price_max=30000');
-//        $items = $crawler->filter('div.items-box-content')->filter('section.items-box')->each(function($element) use (&$i,&$List){
-//            //echo $element->html()."\n";
-//            $List[$i]['name'] = $element->filter('h3')->text();
-//            $List[$i]['price'] = $element->filter('div.items-box-price')->text();
-//            echo $List[$i]['name'];
-//            echo '¥n';
-//        });
-        //スクレイピング更新
-        $this->index();
+    public function test(){
+        /*
+         * ipが通るかどうかの確認に使って下さい
+         * */
         echo 'hello';
     }
 
