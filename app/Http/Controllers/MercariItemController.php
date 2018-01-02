@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Goutte\Client;
+use GuzzleHttp\Client as GuzzleClient;
 use Carbon\Carbon;
 use App\Item;
 use App\Keyword;
@@ -17,13 +18,18 @@ class MercariItemController extends Controller
         $keyword->keyword = str_replace(" ", "+", $keyword->keyword);
         $api_id = $keyword->id;
         $url = "https://www.mercari.com/jp/search/?sort_order=&keyword=".$keyword->keyword."&category_root=&brand_name=&brand_id=&size_group=&price_min=".$keyword->price_min."&price_max=".$keyword->price_max;
-        $proxy = 'http://160.202.42.106:8080';
-        $client2 = new Client();
-        //$client2->setHeader('User-Agent', 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)');
-        //$client2->setHeader('accept-language', 'ja');
-        //$client2->setHeader('accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8');
-        $client2->setHeader('accept-encoding', 'gzip, deflate, br');
-        $crawler = $client2->request('GET', $url,['proxy' => $proxy]);
+        $goutteClient = new Client();
+        $guzzleClient = new GuzzleClient(array(
+            'proxy' => 'http://150.95.153.43:8080',
+        ));
+        $goutteClient->setClient($guzzleClient);
+
+        $goutteClient->setHeader('User-Agent', 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)');
+        $goutteClient->setHeader('accept-language', 'ja');
+        $goutteClient->setHeader('accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8');
+        $goutteClient->setHeader('accept-encoding', 'gzip, deflate, br');
+        $crawler = $goutteClient->request('GET', $url)->html();
+        //$crawler = $goutteClient->request('GET', 'https://ifconfig.co/')->html();
         //
         var_dump($crawler);
         die();
