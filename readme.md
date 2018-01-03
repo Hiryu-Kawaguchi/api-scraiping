@@ -20,6 +20,16 @@
     
 </code>
 
+現状ではipアドレスでの制限を解除し、Basic認証を採用している
+
+<code>
+
+$ php artisan vendor:publish
+
+</code>
+
+上記のコードを実行するとconfig/very_basic_auth.phpができるので、これを編集してIDとPASSWORDを設定
+
 ## 現状
 
 herokuはcronがクレジット登録必須でつかえないのでアクセス時に5分間データベースが
