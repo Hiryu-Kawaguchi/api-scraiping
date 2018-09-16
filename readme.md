@@ -11,22 +11,18 @@
 .envでipアドレスを指定してください
 ※不特定多数の場所からアクセスされると他のサーバーに迷惑かかるので。。
 
-<code>
+```
 
     'dev' => env('IP_DEV'),
     'heroku' => env('IP_HEROKU'),
     'home' => env('IP_HOME'),
     'slack'  => env('SLACK_TOKEN'),
     
-</code>
+```
 
 現状ではipアドレスでの制限を解除し、Basic認証を採用している
 
-<code>
-
-$ php artisan vendor:publish
-
-</code>
+` $ php artisan vendor:publish `
 
 上記のコードを実行するとconfig/very_basic_auth.phpができるので、これを編集してIDとPASSWORDを設定
 
