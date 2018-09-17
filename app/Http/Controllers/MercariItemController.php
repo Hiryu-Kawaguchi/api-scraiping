@@ -86,7 +86,7 @@ class MercariItemController extends Controller
     }
 
     public function run(){
-        //TODO: GASからの定期実行を受けるとこ
+        //TODO: cronで走らせる
 
         /*
          * TOKENで判断する
