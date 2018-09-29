@@ -16,6 +16,7 @@ class Kernel extends ConsoleKernel
         //
         \App\Console\Commands\GetHtml::class,
         \App\Console\Commands\WhileGetHtml::class,
+        \App\Console\Commands\runMercari::class,
     ];
 
     /**
@@ -28,8 +29,8 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
-        $schedule->command('GetHtml')->everyMinute();
-        $schedule->command('WhileGetHtml')->everyTenMinutes();
+        //$schedule->command('GetHtml')->everyMinute();
+        $schedule->command('runMercari')->everyTenMinutes();
     }
 
     /**
