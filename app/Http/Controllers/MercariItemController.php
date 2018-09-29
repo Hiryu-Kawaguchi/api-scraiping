@@ -10,6 +10,12 @@ use App\Keyword;
 
 class MercariItemController extends Controller
 {
+    /*
+     *
+     * ここは使わないようにする
+     *
+     *
+     * */
     public function scraping($keyword){
         $i = 0;
         $List = array();
