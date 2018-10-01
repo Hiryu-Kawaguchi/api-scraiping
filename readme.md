@@ -10,8 +10,12 @@
 
 ### 初期設定
 
-`$ cp .env.example .env`
-`$ composer update`
+```
+$ cp .env.example .env
+$ composer update
+$ php artisan key:generate
+$ php artisan migrate
+```
 
 .envでipアドレスを指定してください
 ※不特定多数の場所からアクセスされると他のサーバーに迷惑かかるので。。
