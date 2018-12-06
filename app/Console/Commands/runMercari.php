@@ -90,7 +90,7 @@ class runMercari extends Command
             */
             $List[$i]['price'] = preg_replace('/[^0-9]/', '', $List[$i]['price']);
             //urlからitem_idを取得
-            $List[$i]['item_id'] = basename($List[$i]['url']);
+            $List[$i]['item_id'] = basename(dirname($List[$i]['url']));
 
             $old_item = Item::where('item_id', $List[$i]['item_id'])->first();
             if($old_item == NULL){
